@@ -46,26 +46,26 @@ The Byte-Pi-Cluster consists of the following hardware components:
 1. **Prepare Raspberry Pi Nodes:**
     - Attach heatsinks to each Raspberry Pi
     - Setup Pi4 cluster by the tutorial from cluster case provider
-    
-    ![3811720189145_.pic.jpg](Hardware%20Setup%209781235bcce541829a5758a85a53239c/47bff0f7-11c9-4cea-bd9b-eeb4220e8ce2.png)
-    
+        
+        ![3811720189145_.pic.jpg](Hardware%20Setup%209781235bcce541829a5758a85a53239c/47bff0f7-11c9-4cea-bd9b-eeb4220e8ce2.png)
+        
     - Glue the raspberry pi 5 fan to the M.2 HAT
     - Connect Pi 5 to the M.2 HAT
-    
-    ![3791720189141_.pic.jpg](Hardware%20Setup%209781235bcce541829a5758a85a53239c/8858bd51-faad-4f01-862b-e036c86897a4.png)
-    
+        
+        ![3791720189141_.pic.jpg](Hardware%20Setup%209781235bcce541829a5758a85a53239c/8858bd51-faad-4f01-862b-e036c86897a4.png)
+        
     - Connect the Raspberry Pi to the power supply and the network switch using Ethernet cables
-    
-    ![3781720189139_.pic.jpg](Hardware%20Setup%209781235bcce541829a5758a85a53239c/fe953ddd-c68f-47ef-9c85-7121bb39213a.png)
-    
+        
+        ![3781720189139_.pic.jpg](Hardware%20Setup%209781235bcce541829a5758a85a53239c/fe953ddd-c68f-47ef-9c85-7121bb39213a.png)
+        
 - Connect the GPU to Stand Bracket with provider’s tutorial
-
-![3821720189146_.pic.jpg](Hardware%20Setup%209781235bcce541829a5758a85a53239c/3821720189146_.pic.jpg)
-
+    
+    ![3821720189146_.pic.jpg](Hardware%20Setup%209781235bcce541829a5758a85a53239c/3821720189146_.pic.jpg)
+    
 - Place all the parts into the rack
-
-![3801720189143_.pic.jpg](Hardware%20Setup%209781235bcce541829a5758a85a53239c/3801720189143_.pic.jpg)
-
+    
+    ![3801720189143_.pic.jpg](Hardware%20Setup%209781235bcce541829a5758a85a53239c/3801720189143_.pic.jpg)
+    
 - Cut out the connector and heat sink on the rack
-
-![3801720189143_.pic.jpg](Hardware%20Setup%209781235bcce541829a5758a85a53239c/3801720189143_.pic%201.jpg)
+    
+    ![3801720189143_.pic.jpg](Hardware%20Setup%209781235bcce541829a5758a85a53239c/3801720189143_.pic%201.jpg)
