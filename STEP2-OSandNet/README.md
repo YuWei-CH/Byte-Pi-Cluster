@@ -50,9 +50,10 @@ For the Byte-Pi-Cluster, we use Raspberry Pi OS (formerly Raspbian). Below are t
         sudo nano /etc/dhcpcd.conf
         ```
         
-    - Add the following lines to configure a static IP address (replace `X` with the appropriate number for each node):
+    - Add the following lines to configure a static IP address (replace `X` with the appropriate number for each node). Add following line to /etc/dhcpcd.conf.:
         
         ```bash
+        # Static IP configuration
         interface eth0
         static ip_address=192.168.1.X/24
         static routers=192.168.1.1
@@ -78,6 +79,13 @@ For the Byte-Pi-Cluster, we use Raspberry Pi OS (formerly Raspbian). Below are t
         sudo systemctl restart dhcpcd
         ```
         
+    - Also stop NetworkManager, if you have. We don’t want DHCP, we want to use static IP.
+    
+    ```bash
+    sudo systemctl stop NetworkManager
+    sudo systemctl disable NetworkManager
+    ```
+    
     - Check for wifi0, if not that means success.
         
         ```bash

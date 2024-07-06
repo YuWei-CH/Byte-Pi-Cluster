@@ -1,8 +1,8 @@
-# Complete Guide for Setting Up frp for Remote Access to Raspberry Pi Cluster
+# Setting Up FRP for Remote Access(Optional)
 
-**FRP is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.**
+Note: this applies only if you do not have a public IP. You can ignore this step if you do have a public IP. If you don't have a public IP, you need to rent a cloud server with public IP or use a local server with a public IP.
 
-**Use FRP for intranet penetration. When you don't have a public IP but want to access this cluster from outside the LAN, frp can help you do so.**
+**FRP is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet. Use FRP for intranet penetration. When you don't have a public IP but want to access this cluster from outside the LAN, frp can help you do so.**
 
 ## Part 1: Setting Up frp Server
 
@@ -166,16 +166,21 @@
     
 2. **Add the following content:**
     
+    Add 10s delay for wifi connect. If you use ethernet, you can remove ’RestartSec=10’ and ‘StartLimitIntervalSec=0’.
+    
     ```bash
     [Unit]
     Description=frp client
     After=network.target
+    Wants=network-online.target
     
     [Service]
     ExecStart=/path/to/your/frpc -c /path/to/your/frpc.toml
     Restart=always
+    RestartSec=10
     User=<username>
     Group=<username>
+    StartLimitIntervalSec=0
     
     [Install]
     WantedBy=multi-user.target

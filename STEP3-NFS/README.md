@@ -18,7 +18,7 @@
 3. **Set Permissions for the Shared Directory:**
     
     ```bash
-    sudo chown -R yuwei:yuwei /mnt/ssd/shared
+    sudo chown -R <username>:<username> /mnt/ssd/shared
     sudo chmod 755 /mnt/ssd/shared
     ```
     
@@ -29,13 +29,15 @@ Open the exports file:
     sudo nano /etc/exports
     ```
     
-    Add the following lines to share the directory with the other nodes on your network. Replay X with your compute node IP:
+    Add the following lines to share the directory with the other nodes on your network. Replay X with your compute nodes’ IP:
     
     ```bash
-    /mnt/ssd/shared 192.168.1.X(rw,sync,no_subtree_check)
-    /mnt/ssd/shared 192.168.1.X(rw,sync,no_subtree_check)
-    /mnt/ssd/shared 192.168.1.X(rw,sync,no_subtree_check)
-    /mnt/ssd/shared 192.168.1.X(rw,sync,no_subtree_check
+    /mnt/ssd/shared 192.168.1.X(rw,sync,no_subtree_check,no_root_squash)
+    /mnt/ssd/shared 192.168.1.X(rw,sync,no_subtree_check,no_root_squash)
+    /mnt/ssd/shared 192.168.1.X(rw,sync,no_subtree_check,no_root_squash)
+    /mnt/ssd/shared 192.168.1.X(rw,sync,no_subtree_check,no_root_squash)
+    .......
+    
     ```
     
     Save and close the file.
@@ -97,7 +99,7 @@ For each worker node (192.168.1.X, 192.168.1.X, 192.168.1.X, 192.168.1.X), follo
 2. **Create a Mount Point:**
     
     ```bash
-    sudo mkdir -p /home/yuwei/shared
+    sudo mkdir -p /mnt/ssd/shared
     ```
     
 3. **Mount the NFS Share:**
@@ -105,13 +107,19 @@ For each worker node (192.168.1.X, 192.168.1.X, 192.168.1.X, 192.168.1.X), follo
     Replay Y with your compute node IP
     
     ```bash
-    sudo mount 192.168.1.Y:/mnt/ssd/shared /home/yuwei/shared
+    sudo mount 192.168.1.Y:/mnt/ssd/shared /mnt/ssd/shared
     ```
     
 4. **Verify the Mount:**
     
     ```bash
-    df -h
+    mount | grep nfs
+    ```
+    
+    You should be able to recieve a output like ’’
+    
+    ```bash
+    192.168.1.X:/mnt/ssd/shared on /mnt/ssd/shared type nfs (rw,relatime,sync,no_subtree_check)
     ```
     
 
@@ -128,7 +136,7 @@ For each worker node (192.168.1.X, 192.168.1.X, 192.168.1.X, 192.168.1.X), follo
     Replay Y with your compute node IP
     
     ```bash
-    192.168.1.Y:/mnt/ssd/shared /home/yuwei/shared nfs defaults 0 0
+    192.168.1.Y:/mnt/ssd/shared /mnt/ssd/shared nfs defaults 0 0
     ```
     
 3. **Save and close the file.**
