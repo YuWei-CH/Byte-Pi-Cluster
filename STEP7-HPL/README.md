@@ -59,8 +59,8 @@ Make. Make sure you have ./xhpl in your testing folder after make step.
  cp Make.Linux_ARM Makefile
  mv Makefile ..
  cd ..
- make arch=Linux_AR
  ./configure
+ make arch=Linux_ARM
 ```
 
 Modify the HPL.dat to fit your machine. I believe these two sites are really good references:
