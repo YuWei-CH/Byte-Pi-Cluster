@@ -24,6 +24,7 @@ The Byte Pi Cluster is a Raspberry Pi-based mini cluster designed for distribute
 - **Compute Nodes**: Multiple Raspberry Pi 4 devices with 4GB RAM. And a Raspberry Pi 5 devices with 8GB RAM connect with a RX580 GPU
 - **Networking**: All nodes connected via a network switch.
 - **Storage**: External 500GB SSD connected to the headnode, shared across the cluster via NFS.
+- **GPU**: AMD RX580 provides better image&video processing capabilities as well as a potential general-purpose computing power boost.
 
 ## Software Setup
 
@@ -32,7 +33,7 @@ The Byte Pi Cluster is a Raspberry Pi-based mini cluster designed for distribute
 - **Static IPs**: Each node is assigned a static IP for consistent network configuration.
 - **SSH**: Enabled on all nodes for secure access and management.
 - **FRP:** Allowed public network access without have public IP.
-- **GPU Support:** GPU acceleration.
+- **GPU Support:** GPU acceleration (currently support amd polaris).
 
 ## Usage
 
