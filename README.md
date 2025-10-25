@@ -1,8 +1,8 @@
-# Byte Pi Cluster
+# Byte Pi Cluster(2.0)
 
 ## Overview
 
-The Byte Pi Cluster is a Raspberry Pi-based mini cluster designed for distributed computing and educational purposes. This project aims to provide a platform for learning about clustering, distributed systems, and high-performance computing using low-cost, readily available hardware.
+The Byte Pi Cluster(2.0) is a Raspberry Pi-based mini cluster designed for AI computing and educational purposes. This project aims to provide a platform for learning about clustering, distributed systems, and high-performance computing using low-cost, readily available hardware.
 
  **Figures:**
 
@@ -20,20 +20,22 @@ The Byte Pi Cluster is a Raspberry Pi-based mini cluster designed for distribute
 
 ## Hardware Configuration
 
-- **Headnode**: Raspberry Pi 4 with 4GB RAM, acting as the master node.
-- **Compute Nodes**: Multiple Raspberry Pi 4 devices with 4GB RAM. And a Raspberry Pi 5 devices with 8GB RAM connect with a RX580 GPU
+- **Headnode**: Raspberry Pi 5 with 8GB RAM, acting as the master node.
+- **Compute Nodes**: Multiple Raspberry Pi 4 devices with 4GB RAM. And a Raspberry Pi 5 devices with 8GB RAM connect with a ~~AMD RX580 GPU~~ 13 TOPS Hailo-8L chip
 - **Networking**: All nodes connected via a network switch.
 - **Storage**: External 500GB SSD connected to the headnode, shared across the cluster via NFS.
-- **GPU**: AMD RX580 provides better image&video processing capabilities as well as a potential general-purpose computing power boost.
+- **AI Accelerator**: The AI module is a 13 tera-operations per second (TOPS) neural network inference accelerator built around the Hailo-8L chip.
+- ~~**GPU**: AMD RX580 provides better image & video processing capabilities as well as a potential general-purpose computing power boost.~~
 
 ## Software Setup
 
-- **Operating System**: Raspbian OS on all nodes.
+- **Operating System**: Ubuntu Server 24.04.3 LTS(64 bit) on all nodes.
 - **NFS**: Network File System for shared storage.
 - **Static IPs**: Each node is assigned a static IP for consistent network configuration.
 - **SSH**: Enabled on all nodes for secure access and management.
 - **FRP:** Allowed public network access without have public IP.
-- **GPU Support:** GPU acceleration (currently support amd polaris).
+- **Hailo** Hailo driver and library for computing.
+~~- **GPU Support:** GPU acceleration (currently support amd polaris).~~
 
 ## Usage
 
@@ -52,7 +54,7 @@ The Byte Pi Cluster is a Raspberry Pi-based mini cluster designed for distribute
 If you have any questions or need further assistance, you can use Github Issues to raise issues. I'll get back to you as soon as I can. And If you have any good idea or something want to let me know, please feel free to contact me:
 
 - **Name**: Yuwei Sun / 孙钰伟 (my Chinese name)
-- **Email**: [ys4680@nyu.edu](mailto:ys4680@nyu.edu)
+- **Email**: [yuweis2@illinois.edu](mailto:yuweis2@illinois.edu)
 
 ## Thanks
 
@@ -61,6 +63,7 @@ Thanks for these outstanding open source projects:
 - **Pi OS linux kernal:** [https://github.com/raspberrypi/linux](https://github.com/raspberrypi/linux)
 - **FRP(fast reverse proxy):** [https://github.com/fatedier/frp](https://github.com/fatedier/frp)
 - **Raspberry Pi PCI Express device compatibility database:** [https://pipci.jeffgeerling.com/](https://pipci.jeffgeerling.com/)
+- **Hacker’s guide to the Raspberry Pi AI kit on Ubuntu** [https://ubuntu.com/blog/hackers-guide-to-the-raspberry-pi-ai-kit-on-ubuntu]https://ubuntu.com/blog/hackers-guide-to-the-raspberry-pi-ai-kit-on-ubuntu
 - …….
 
 ### Have a nice day !!!
